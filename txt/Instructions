@@ -1,0 +1,18 @@
+Each monster type has a diferent way of input.
+
+You don't need to change nothing in the "player" and "challenger" .txt files
+
+Magic:
+> Name
+> knowledge
+> fireball damage
+> firestorm damage
+
+Winged:
+> Name
+> Speed
+> holy spear damage
+> hand of god damage
+
+beast:
+/.. TO DO ../

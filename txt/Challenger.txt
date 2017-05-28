@@ -1,0 +1,12 @@
+Winged
+Holy Knight
+130
+7
+20
+30
+Winged
+Holy Priest
+150
+7
+10
+20
