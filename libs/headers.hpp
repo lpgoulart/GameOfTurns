@@ -12,6 +12,5 @@
 #include <string>
 #include "../libs/system.hpp"
 #include "../libs/monster.hpp"
-#include "../libs/MonsterType.hpp"
 
 #endif

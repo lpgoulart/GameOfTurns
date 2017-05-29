@@ -10,6 +10,14 @@
 //--------------------------------------------------------------------
 // sets and gets
 
+	void MonsterType::setType ( std::string Type ) {
+		this->type = Type;
+	}
+
+	std::string MonsterType::getType () {
+		return this->type;
+	}
+
 	void MonsterType::setName ( std::string Name ) {
 		this->name = Name;
 	}
@@ -48,5 +56,30 @@
 
 	int MonsterType::getSecondDmg () {
 		return this->secondDmg;
+	}
+//--------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+// Constructor
+
+	MonsterType::MonsterType ( MonsterType* monster ) {
+
+			this->type = monster->getType();
+
+			this->name = monster->getName();
+
+			this->life = monster->getLife();
+
+			this->passive = monster->getPassive();
+
+			this->firstDmg = monster->getFirstDmg();
+
+			this->secondDmg = monster->getSecondDmg();
+
+
+	}
+
+	MonsterType::MonsterType () {
+
 	}
 //--------------------------------------------------------------------

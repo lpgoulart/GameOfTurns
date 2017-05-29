@@ -7,11 +7,14 @@
 #ifndef _MONSTERTYPE_HPP_
 #define _MONSTERTYPE_HPP_
 
+#include "../libs/headers.hpp"
+#include "../libs/MonsterType.hpp"
 
 class MonsterType {
 
 private:
 
+	std::string type;
 	std::string name;
 	int life;
 	int passive;
@@ -19,6 +22,9 @@ private:
 	int secondDmg;
 
 public:
+
+	void setType ( std::string );
+	std::string getType();
 
 	void setName ( std::string );
 	std::string getName ();
@@ -34,6 +40,9 @@ public:
 
 	void setSecondDmg ( int );
 	int getSecondDmg ();
+
+	MonsterType ( MonsterType* );
+	MonsterType();
 
 };
 

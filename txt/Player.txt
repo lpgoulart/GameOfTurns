@@ -4,3 +4,15 @@ Wizard
 0
 15
 35
+Winged
+Holy Priest
+150
+7
+10
+20
+Magic
+Wizard of Ice
+100
+0
+15
+35
