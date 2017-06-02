@@ -11,7 +11,7 @@ Holy Priest
 10
 20
 Magic
-Wizard of Ice
+Ice Wizard
 100
 0
 15

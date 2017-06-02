@@ -15,9 +15,9 @@ protected:
 
 	std::string name;
 	int life;
-	int strength; //base damage for beast type
-	int spirit; //base damage for magic type
-	int vitality; //base damage for winged type
+	int strength = 5; //base damage for beast type
+	int spirit = 5; //base damage for magic type
+	int vitality = 5; //base damage for winged type
 	int FstDmg;
 	int SecDmg;
 

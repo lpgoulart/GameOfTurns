@@ -14,6 +14,5 @@ int main () {
 		
 	system.listMonster ();
 
-
 	return 0;
 }

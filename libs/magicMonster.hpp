@@ -21,33 +21,18 @@ private:
 public:
 
 	void setKnowledge ( int );
-	void useKnowledge (); // passive buff
+	int useKnowledge (); // passive buff
 	int getKnowledge ();
 
-	//void fireBall (); // atk
-	//void fireStorm(); // atk
-/*
 //--------------------------------------------------------------------
-//	fireball
+//	spell
 
-	void fireBall ( wingedMonster* );
-
-	void fireBall ( magicMonster* );
-
-	void fireBall ( beastMonster* );
+	int Spell ( int, int );
 //--------------------------------------------------------------------	
 
-//--------------------------------------------------------------------
-//	firestorm
 
-	void fireStorm ( wingedMonster* );
 
-	void fireStorm ( magicMonster* );
-
-	void fireStorm ( beastMonster* );
-//--------------------------------------------------------------------	
-*/
-	//magicMonster();
+	magicMonster();
 	//~magicMonster();
 	
 };

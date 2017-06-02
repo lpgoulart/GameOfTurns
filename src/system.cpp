@@ -15,7 +15,7 @@
 	}
 
 //--------------------------------------------------------------------
-// list monsters Player
+// list monsters Player OK
 
 	void System::listMonster () {
 
@@ -52,7 +52,7 @@
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-// choosen one Player
+// choosen one Player OK
 
 	void System::choosenOne ( std::string theOne ) {
 		
@@ -106,11 +106,11 @@
 			else {
 				system.createMonster ( monsterType, type );
 			}
-	}
+	} 
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-// create monster Player
+// create monster Player OK
 
 	void System::createMonster ( std::string type, MonsterType features ) {
 
@@ -165,17 +165,20 @@
 				std::cout << "Second Dmg: " << winged.getSecDmg() << "\n";
 
 				std::cout << "\nWinged Monster Created\n";
+
+				system.Duel ( winged );
+
 			break;
 
 			case 0:
 				std::cout << "The type of monster don't exist\n\n";
 			break;
 		}
-	}
+	} 
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-// choosen one Challenger
+// choosen one Challenger OK
 
 	MonsterType System::choosenOne () {
 		
@@ -217,46 +220,362 @@
 					std::cout << "------------You Won------------\n\n";
 					exit(0);
 				}
-	}
+	} 
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-//	Duel
+//	Magic Duel 	/	MAGIC DUEL MAGIC OK		/	MAGIC DUEL WINGED OK
 
 	void System::Duel ( magicMonster magic) {
 
 		System system;
 		MonsterType challenger ( system.choosenOne () );
 		int action;
+		int damage = 0;
+		int luck;
 
-		if ( challenger.getType() == "Magic" ) {
+		if ( challenger.getType() == "Magic" ) {	//magic vs magic
 			std::cout << "Magic against magic\n\n";
 			std::cout << magic.getName() << std::endl;
 			std::cout << challenger.getName() << std::endl;
 
-			while ( magic.getLife() >= 0 || challenger.getLife() >=0 ) {
+			do {
+
 				std::cout << "( 1 ) Use knowledge\n";
 				std::cout << "( 2 ) Use spell\n";
 				std::cout << "( 3 ) Use stronger spell\n";
 				std::cout << "Choose: ";
 				std::cin >> action;
+				std::cout << "\033[2J\033[1;1H";
 				std::cin.get();
 
 				switch ( action ) {
 					case 1:
-						std::cout << "I'll use Knowledge!\n\n";
+							std::cout << "Player: I'll use Knowledge!\n\n";
+							damage = magic.useKnowledge();
+							magic.setKnowledge( damage );
 					break;
 					case 2:
-						std::cout << "I'll cast my spell!\n\n";
+						std::cout << "Player: I'll cast my spell!\n\n";
+							damage = magic.getFstDmg() + magic.getSpirit() + magic.getKnowledge();
+							damage = magic.Spell ( challenger.getLife(), damage );
+
+							challenger.setLife( damage );
+
 					break;
 					case 3:
 						std::cout << "I'll use my secret scroll!!\n\n";
+
+							damage = magic.getSecDmg() + magic.getSpirit() + magic.getKnowledge();
+							damage = magic.Spell ( challenger.getLife(), damage );
+
+							challenger.setLife( damage );
 					break;
 				}
-			}
 
+				if ( magic.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					std::cout << "You won\n\n";
+					
+					std::cout << magic.getName() << std::endl;
+					std::cout << magic.getLife() << "\n\n";
+					
+					std::cout << challenger.getName() << std::endl;
+					std::cout << challenger.getLife() << "\n\n";
+
+					break;
+				}
+
+				luck = rand () % 7 + 0;
+
+					if ( luck >= 3 ) {
+						action = 2;
+						switch ( action ) {
+							case 2:
+								std::cout << "Enemy: I'll cast my spell!\n\n";
+									damage = challenger.getFirstDmg() + challenger.getSpirit();
+									damage = challenger.Atk ( magic.getLife(), damage );
+
+									magic.setLife( damage );
+
+							break;
+							case 3:
+								std::cout << "I'll use my secret scroll!!\n\n";
+							break;
+						}
+					} 
+					else {
+						std::cout << "Enemy: Miss\n";
+					} 
+
+				std::cout << magic.getName() << std::endl;
+				std::cout << magic.getLife() << "\n\n";
+				
+				std::cout << challenger.getName() << std::endl;
+				std::cout << challenger.getLife() << "\n\n";
+
+				if ( magic.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					break;
+				}
+
+			} while ( 1 );
 		}
 
+		else if ( challenger.getType() == "Winged" ) {	//magic vs winged
+				std::cout << "Magic against winged\n\n";
+				std::cout << magic.getName() << std::endl;
+				std::cout << challenger.getName() << std::endl;
 
+				do {
+
+					std::cout << "( 1 ) Use Knowledge\n";
+					std::cout << "( 2 ) Use Spell\n";
+					std::cout << "( 3 ) Use Stronger spell\n";
+					std::cout << "Choose: ";
+					std::cin >> action;
+					std::cout << "\033[2J\033[1;1H";
+					std::cin.get();
+
+					switch ( action ) {
+						case 1:
+								std::cout << "Player: I'll use Knowledge!\n\n";
+								damage = magic.useKnowledge();
+								magic.setSpirit( damage );
+						break;
+						case 2:
+							std::cout << "Player: I'll cast my spell!\n\n";
+								damage = magic.getKnowledge() + magic.getSpirit() + magic.getFstDmg();
+								damage = magic.Spell ( challenger.getLife(), damage );
+
+								challenger.setLife( damage );
+
+						break;
+						case 3:
+							std::cout << "I'll use my secret scroll!!\n\n";
+
+							damage = magic.getSecDmg() + magic.getSpirit() + magic.getKnowledge();
+							damage = magic.Spell ( challenger.getLife(), damage );
+
+							challenger.setLife( damage );
+						break;
+					}
+
+					if ( magic.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						std::cout << "You won\n\n";
+
+						std::cout << magic.getName() << std::endl;
+						std::cout << magic.getLife() << "\n\n";
+						
+						std::cout << challenger.getName() << std::endl;
+						std::cout << challenger.getLife() << "\n\n";
+						break;
+					}
+
+					luck = rand () % 7 + 0;
+
+						if ( luck >= 5 ) {
+							action = 2;
+							switch ( action ) {
+								case 2:
+									std::cout << "Enemy: I'll use holy attack!\n\n";
+										damage = challenger.getFirstDmg() + challenger.getVitality();
+										damage = challenger.Atk ( magic.getLife(), damage );
+
+										magic.setLife( damage );
+
+								break;
+								case 3:
+									std::cout << "I'll Divine attack!!\n\n";
+								break;
+							}
+						} 
+						else {
+							std::cout << "Enemy: Miss\n";
+						} 
+
+					std::cout << magic.getName() << std::endl;
+					std::cout << magic.getLife() << "\n\n";
+					
+					std::cout << challenger.getName() << std::endl;
+					std::cout << challenger.getLife() << "\n\n";
+
+					if ( magic.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						break;
+					}
+
+				} while ( 1 );
+			}
+	}
+//--------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+//	Winged Duel 	/	WINGED DUEL MAGIC 	/	WINGED DUEL WINGED 
+
+	void System::Duel ( wingedMonster winged ) {
+
+		System system;
+		MonsterType challenger ( system.choosenOne () );
+		int action;
+		int damage = 0;
+		int luck;
+
+		if ( challenger.getType() == "Magic" ) {	//winged vs magic
+			std::cout << "Winged against magic\n\n";
+			std::cout << winged.getName() << std::endl;
+			std::cout << challenger.getName() << std::endl;
+
+			do {
+
+				std::cout << "( 1 ) Use Agility\n";
+				std::cout << "( 2 ) Use holy attack\n";
+				std::cout << "( 3 ) Use divine attack\n";
+				std::cout << "Choose: ";
+				std::cin >> action;
+				std::cout << "\033[2J\033[1;1H";
+				std::cin.get();
+
+				switch ( action ) {
+					case 1:
+							std::cout << "Player: I'll use Agility!\n\n";
+							winged.useAgility();
+					break;
+					case 2:
+						std::cout << "Player: I'll use holy attack!\n\n";
+							damage = winged.getFstDmg() + winged.getVitality();
+							damage = winged.holyAtk ( challenger.getLife(), damage );
+
+							challenger.setLife( damage );
+
+					break;
+					case 3:
+						std::cout << "I'll use divine attack!!\n\n";
+							damage = winged.getFstDmg() + winged.getVitality();
+							damage = winged.divineAtk ( challenger.getLife(), damage );
+
+							challenger.setLife( damage );
+					break;
+				}
+
+				if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					std::cout << "You won\n\n";
+					
+					std::cout << winged.getName() << std::endl;
+					std::cout << winged.getLife() << "\n\n";
+					
+					std::cout << challenger.getName() << std::endl;
+					std::cout << challenger.getLife() << "\n\n";
+
+					break;
+				}
+
+				luck = rand () % winged.getAgility() + 0;
+
+					if ( luck >= winged.getAgility()/2 + 3 ) {
+						action = 2;
+						switch ( action ) {
+							case 2:
+								std::cout << "Enemy: I'll cast my spell!\n\n";
+									damage = challenger.getFirstDmg() + challenger.getSpirit();
+									damage = challenger.Atk ( winged.getLife(), damage );
+
+									winged.setLife( damage );
+
+							break;
+							case 3:
+								std::cout << "I'll use my secret scroll!!\n\n";
+							break;
+						}
+					} 
+					else {
+						std::cout << "Enemy: Miss\n";
+					} 
+
+				std::cout << winged.getName() << std::endl;
+				std::cout << winged.getLife() << "\n\n";
+				
+				std::cout << challenger.getName() << std::endl;
+				std::cout << challenger.getLife() << "\n\n";
+
+				if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					break;
+				}
+
+			} while ( 1 );
+		}
+
+		else if ( challenger.getType() == "Winged" ) {	//winged vs winged
+				std::cout << "Magic against winged\n\n";
+				std::cout << winged.getName() << std::endl;
+				std::cout << challenger.getName() << std::endl;
+
+				do {
+
+					std::cout << "( 1 ) Use Knowledge\n";
+					std::cout << "( 2 ) Use Spell\n";
+					std::cout << "( 3 ) Use Stronger spell\n";
+					std::cout << "Choose: ";
+					std::cin >> action;
+					std::cout << "\033[2J\033[1;1H";
+					std::cin.get();
+
+					switch ( action ) {
+						case 1:
+							std::cout << "Player: I'll use Agility!\n\n";
+								winged.useAgility();
+						break;
+						case 2:
+							std::cout << "Player: I'll use holy attack!\n\n";
+								damage = winged.getFstDmg() + winged.getVitality();
+								damage = winged.holyAtk ( challenger.getLife(), damage );
+
+								challenger.setLife( damage );
+
+						break;
+						case 3:
+							std::cout << "I'll use divine attack!!\n\n";
+								damage = winged.getFstDmg() + winged.getVitality();
+								damage = winged.divineAtk ( challenger.getLife(), damage );
+
+								challenger.setLife( damage );
+						break;
+					}
+
+					if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						break;
+					}
+
+					luck = rand () % winged.getAgility() + 0;
+
+					if ( luck >= winged.getAgility()/2 + 3 ) {
+							action = 2;
+							switch ( action ) {
+								case 2:
+									std::cout << "Enemy: I'll use holy attack!\n\n";
+										damage = challenger.getFirstDmg() + challenger.getVitality();
+										damage = challenger.Atk ( winged.getLife(), damage );
+
+										winged.setLife( damage );
+
+								break;
+								case 3:
+									std::cout << "I'll Divine attack!!\n\n";
+								break;
+							}
+						} 
+						else {
+							std::cout << "Enemy: Miss\n";
+						} 
+
+					std::cout << winged.getName() << std::endl;
+					std::cout << winged.getLife() << "\n\n";
+					
+					std::cout << challenger.getName() << std::endl;
+					std::cout << challenger.getLife() << "\n\n";
+
+					if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						break;
+					}
+
+				} while ( 1 );
+			}
 	}
 //--------------------------------------------------------------------

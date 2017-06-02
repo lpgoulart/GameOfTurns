@@ -4,3 +4,9 @@ Dark Wizard
 0
 15
 35
+Winged
+God
+200
+0
+50
+60

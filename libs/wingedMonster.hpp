@@ -17,41 +17,29 @@ class wingedMonster: public Monster {
 
 private:
 
-	int agility;
 	int speed;
 
 public:
 
 	void setAgility ( int );
 	int getAgility ();
-	void useAgility (); // passive buff
-
-	void setSpeed ( int );
-	int getSpeed ();
+	int useAgility (); // passive buff
 
 	//void holySpear (); // atk
 	//void handOfGod (); // atk
-/*
+
 //--------------------------------------------------------------------
-//	holy spear
+//	holy atk
 
-	void holySpear ( wingedMonster* );
-
-	void holySpear ( magicMonster* );
-
-	void holySpear ( beastMonster* );
+	int holyAtk ( int, int );
 //--------------------------------------------------------------------	
 
 //--------------------------------------------------------------------
-//	hand of god
+//	divine atk
 
-	void hondOfGod ( wingedMonster* );
-
-	void hondOfGod ( magicMonster* );
-
-	void hondOfGod ( beastMonster* );
+	int divineAtk ( int, int );
 //--------------------------------------------------------------------	
-*/
+
 	//wingedMonster();
 	//~wingedMonster();
 	

@@ -7,6 +7,11 @@
 #include "../libs/headers.hpp"
 #include "../libs/magicMonster.hpp"
 
+
+	magicMonster::magicMonster () {
+
+	}
+
 //--------------------------------------------------------------------
 //	gets and sets
 	void magicMonster::setKnowledge ( int know ) {
@@ -21,60 +26,16 @@
 //--------------------------------------------------------------------
 //	knowledge - atk + 3
 
-	//void magicMonster::useKnowledge () {
-	//	this->damage += 3;
-	//}
-//--------------------------------------------------------------------
-/*
-//--------------------------------------------------------------------
-//	fireball 
-
-
-	void magicMonster::fireBall ( beastMonster* giant ) {
-		int life = giant->getLife();
-		life -= this->damage;
-
-		giant->setLife ( life );
-	}	
-
-	void magicMonster::fireBall ( magicMonster* wizard ) {
-		int life = wizard->getLife();
-		life -= this->damage;
-
-		wizard->setLife ( life );
-	}
-
-	void magicMonster::fireBall ( wingedMonster* holy ) {
-		int life = holy->getLife();
-		life -= this->damage;
-
-		holy->setLife ( life );
+	int magicMonster::useKnowledge () {
+		return this->knowledge += 3;
 	}
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-//	firestorm 
+//	spell 
 
-
-	void magicMonster::fireStorm ( beastMonster* giant ) {
-		int life = giant->getLife();
-		life -= this->damage;
-
-		giant->setLife ( life );
-	}	
-
-	void magicMonster::fireStorm ( magicMonster* wizard ) {
-		int life = wizard->getLife();
-		life -= this->damage;
-
-		wizard->setLife ( life );
-	}
-
-	void magicMonster::fireStorm ( wingedMonster* holy ) {
-		int life = holy->getLife();
-		life -= this->damage;
-
-		holy->setLife ( life );
+	int magicMonster::Spell ( int enemyLife, int damage ) {
+		return enemyLife - damage;
 	}
 //--------------------------------------------------------------------
-*/
+

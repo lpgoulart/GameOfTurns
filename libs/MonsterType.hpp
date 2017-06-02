@@ -9,8 +9,9 @@
 
 #include "../libs/headers.hpp"
 #include "../libs/MonsterType.hpp"
+#include "../libs/monster.hpp"
 
-class MonsterType {
+class MonsterType: public Monster {
 
 private:
 
@@ -43,6 +44,8 @@ public:
 
 	MonsterType ( MonsterType* );
 	MonsterType();
+
+	int Atk ( int, int );
 
 };
 

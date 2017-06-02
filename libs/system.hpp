@@ -27,9 +27,9 @@ public:
 
 	void Duel ( magicMonster );
 
-	//void Duel ( wingedMonster* );
+	void Duel ( wingedMonster );
 
-	//void Duel ( beastMonster* );
+	//void Duel ( beastMonster );
 //--------------------------------------------------------------------
 	System();
 	//~System();
