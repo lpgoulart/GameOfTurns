@@ -76,8 +76,36 @@
 			this->firstDmg = monster->getFirstDmg();
 
 			this->secondDmg = monster->getSecondDmg();
+	}
 
+	MonsterType::MonsterType ( magicMonster monster ) {
 
+			this->type = "Magic";
+
+			this->name = monster.getName();
+
+			this->life = monster.getLife();
+
+			this->passive = monster.getSpirit();
+
+			this->firstDmg = monster.getFstDmg();
+
+			this->secondDmg = monster.getSecDmg();
+	}
+
+	MonsterType::MonsterType ( wingedMonster monster ) {
+
+			this->type = "Winged";
+
+			this->name = monster.getName();
+
+			this->life = monster.getLife();
+
+			this->passive = monster.getVitality();
+
+			this->firstDmg = monster.getFstDmg();
+
+			this->secondDmg = monster.getSecDmg();
 	}
 
 	MonsterType::MonsterType () {

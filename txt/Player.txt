@@ -1,18 +1,13 @@
-Magic
-Wizard
-100
-0
-15
-35
 Winged
 Holy Priest
 150
 7
-10
-20
+5
+15
 Magic
 Ice Wizard
 100
 0
 15
 35
+

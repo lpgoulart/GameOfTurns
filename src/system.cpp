@@ -29,6 +29,7 @@
 		std::string str;
 
 		while ( std::getline ( player, str ) ) { //get the type
+				if ( str == "" ) break;
 				monsterType = str;
 				std::cout << monsterType << std::endl;
 
@@ -73,6 +74,7 @@
 
 			while ( std::getline ( player, str ) || exist != true ) { //get the type
 				monsterType = str;
+				if ( str == "" ) break;
 
 				std::getline ( player, str ); //get the mosnter's name
 				if ( str == theOne ) {
@@ -282,6 +284,8 @@
 					std::cout << challenger.getName() << std::endl;
 					std::cout << challenger.getLife() << "\n\n";
 
+					system.Remove ( challenger, 0 );
+
 					break;
 				}
 
@@ -314,6 +318,7 @@
 				std::cout << challenger.getLife() << "\n\n";
 
 				if ( magic.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					system.Remove ( magic, 1 );
 					break;
 				}
 
@@ -367,6 +372,9 @@
 						
 						std::cout << challenger.getName() << std::endl;
 						std::cout << challenger.getLife() << "\n\n";
+
+						system.Remove ( challenger, 0 );
+
 						break;
 					}
 
@@ -399,6 +407,7 @@
 					std::cout << challenger.getLife() << "\n\n";
 
 					if ( magic.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						system.Remove ( magic, 1 );
 						break;
 					}
 
@@ -408,7 +417,7 @@
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-//	Winged Duel 	/	WINGED DUEL MAGIC 	/	WINGED DUEL WINGED 
+//	Winged Duel 	/	WINGED DUEL MAGIC OK 	/	WINGED DUEL WINGED OK
 
 	void System::Duel ( wingedMonster winged ) {
 
@@ -437,6 +446,8 @@
 					case 1:
 							std::cout << "Player: I'll use Agility!\n\n";
 							winged.useAgility();
+							std::cout << "Agi +3: ";
+							std::cout << winged.getAgility() << std::endl;
 					break;
 					case 2:
 						std::cout << "Player: I'll use holy attack!\n\n";
@@ -464,12 +475,14 @@
 					std::cout << challenger.getName() << std::endl;
 					std::cout << challenger.getLife() << "\n\n";
 
+					system.Remove ( challenger, 0 );
+
 					break;
 				}
 
 				luck = rand () % winged.getAgility() + 0;
 
-					if ( luck >= winged.getAgility()/2 + 3 ) {
+					if ( luck >= winged.getAgility()/2 + winged.getAgility()/3 ) {
 						action = 2;
 						switch ( action ) {
 							case 2:
@@ -496,6 +509,7 @@
 				std::cout << challenger.getLife() << "\n\n";
 
 				if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					system.Remove ( winged, 1 );
 					break;
 				}
 
@@ -540,6 +554,16 @@
 					}
 
 					if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						std::cout << "You won\n\n";
+					
+						std::cout << winged.getName() << std::endl;
+						std::cout << winged.getLife() << "\n\n";
+						
+						std::cout << challenger.getName() << std::endl;
+						std::cout << challenger.getLife() << "\n\n";
+
+						system.Remove ( challenger, 0 );
+
 						break;
 					}
 
@@ -572,6 +596,7 @@
 					std::cout << challenger.getLife() << "\n\n";
 
 					if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						system.Remove ( winged, 1 );
 						break;
 					}
 

@@ -10,6 +10,9 @@
 #include "../libs/headers.hpp"
 #include "../libs/MonsterType.hpp"
 #include "../libs/monster.hpp"
+#include "../libs/magicMonster.hpp"
+#include "../libs/wingedMonster.hpp"
+#include "../libs/beastMonster.hpp"
 
 class MonsterType: public Monster {
 
@@ -43,6 +46,8 @@ public:
 	int getSecondDmg ();
 
 	MonsterType ( MonsterType* );
+	MonsterType ( magicMonster );
+	MonsterType ( wingedMonster );
 	MonsterType();
 
 	int Atk ( int, int );
