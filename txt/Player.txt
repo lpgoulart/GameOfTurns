@@ -1,3 +1,27 @@
+Beast
+Hulk
+140
+0
+30
+40
+Winged
+God
+200
+0
+50
+60
+Magic
+Dark Wizard
+100
+0
+15
+35
+Magic
+Wizard
+100
+0
+15
+35
 Winged
 Holy Priest
 150

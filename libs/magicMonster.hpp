@@ -9,8 +9,6 @@
 
 #include "../libs/headers.hpp"
 #include "../libs/monster.hpp"
-#include "../libs/beastMonster.hpp"
-#include "../libs/wingedMonster.hpp"
 
 class magicMonster: public Monster {
 
@@ -24,11 +22,8 @@ public:
 	int useKnowledge (); // passive buff
 	int getKnowledge ();
 
-//--------------------------------------------------------------------
-//	spell
-
 	int Spell ( int, int );
-//--------------------------------------------------------------------	
+
 
 
 

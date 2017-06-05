@@ -1,19 +1,1 @@
-Magic
-Wizard
-100
-0
-15
-35
-Magic
-Dark Wizard
-100
-0
-15
-35
-Winged
-God
-200
-0
-50
-60
 

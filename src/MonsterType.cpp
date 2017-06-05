@@ -108,6 +108,21 @@
 			this->secondDmg = monster.getSecDmg();
 	}
 
+	MonsterType::MonsterType ( beastMonster monster ) {
+
+			this->type = "Beast";
+
+			this->name = monster.getName();
+
+			this->life = monster.getLife();
+
+			this->passive = monster.getVitality();
+
+			this->firstDmg = monster.getFstDmg();
+
+			this->secondDmg = monster.getSecDmg();
+	}
+
 	MonsterType::MonsterType () {
 
 	}

@@ -9,10 +9,8 @@
 
 #include "../libs/headers.hpp"
 #include "../libs/monster.hpp"
-#include "../libs/magicMonster.hpp"
-#include "../libs/wingedMonster.hpp"
 
-class BeastMonster: protected Monster {
+class beastMonster: public Monster {
 
 private:
 
@@ -20,15 +18,14 @@ private:
 
 public:
 
-	void setRage ();
+	void setRage ( int );
 	int getRage ();
-	void useRage (); // passive buff
+	int useRage (); // passive buff
 
-	void Berserk (); // atk 
-	void Frenesi (); // atk
+	int frenesi ( int, int ); // atk 
 
-	BeastMonster();
-	~BeastMonster();
+	beastMonster();
+	//~beastMonster();
 	
 };
 

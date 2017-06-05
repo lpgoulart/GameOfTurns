@@ -48,6 +48,7 @@ public:
 	MonsterType ( MonsterType* );
 	MonsterType ( magicMonster );
 	MonsterType ( wingedMonster );
+	MonsterType ( beastMonster );
 	MonsterType();
 
 	int Atk ( int, int );
