@@ -8,7 +8,7 @@
 #include "../libs/beastMonster.hpp"
 #include "../libs/magicMonster.hpp"
 #include "../libs/wingedMonster.hpp"
-#include "../libs/MonsterType.hpp"	
+#include "../libs/MonsterType.hpp"
 
 	System::System() {
 
@@ -192,7 +192,7 @@
 
 				std::cout << "\nBeast Monster Created\n";
 
-				//system.Duel ( beast );
+				system.Duel ( beast );
 
 			break;
 
@@ -255,7 +255,7 @@
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-//	Magic Duel 	/	MAGIC DUEL MAGIC OK		/	MAGIC DUEL WINGED OK
+//	Magic Duel OK 
 
 	void System::Duel ( magicMonster magic) {
 
@@ -301,6 +301,9 @@
 							damage = magic.Spell ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
+					break;
+					default:
+						std::cout << "You lost your turn\n\n";
 					break;
 				}
 
@@ -391,6 +394,9 @@
 
 							challenger.setLife( damage );
 						break;
+						default:
+						std::cout << "You lost your turn\n\n";
+						break;
 					}
 
 					if ( magic.getLife() <= 0 || challenger.getLife() <= 0 ) {
@@ -480,6 +486,9 @@
 
 							challenger.setLife( damage );
 					break;
+					default:
+						std::cout << "You lost your turn\n\n";
+					break;
 				}
 
 				if ( magic.getLife() <= 0 || challenger.getLife() <= 0 ) {
@@ -536,7 +545,7 @@
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-//	Winged Duel 	/	WINGED DUEL MAGIC OK 	/	WINGED DUEL WINGED OK
+//	Winged Duel OK
 
 	void System::Duel ( wingedMonster winged ) {
 
@@ -582,6 +591,9 @@
 							damage = winged.divineAtk ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
+					break;
+					default:
+						std::cout << "You lost your turn\n\n";
 					break;
 				}
 
@@ -670,6 +682,9 @@
 
 								challenger.setLife( damage );
 						break;
+						default:
+						std::cout << "You lost your turn\n\n";
+						break;
 					}
 
 					if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
@@ -720,18 +735,123 @@
 					}
 
 				} while ( 1 );
-			}
+		}
 
-			if ( challenger.getType() == "Beast" ) {	//winged vs beast
-			std::cout << "Winged against beast\n\n";
-			std::cout << winged.getName() << std::endl;
+		else if ( challenger.getType() == "Beast" ) {	//winged vs beast
+				std::cout << "Winged against beast\n\n";
+				std::cout << winged.getName() << std::endl;
+				std::cout << challenger.getName() << std::endl;
+
+				do {
+
+					std::cout << "( 1 ) Use Agility\n";
+					std::cout << "( 2 ) Use holy attack\n";
+					std::cout << "( 3 ) Use divine attack\n";
+					std::cout << "Choose: ";
+					std::cin >> action;
+					std::cout << "\033[2J\033[1;1H";
+					std::cin.get();
+
+					switch ( action ) {
+						case 1:
+								std::cout << "Player: I'll use Agility!\n\n";
+								damage = winged.useAgility();
+								winged.setAgility( damage );
+						break;
+						case 2:
+							std::cout << "Player: I'll use my holy attack!\n\n";
+								damage = winged.getFstDmg() + winged.getVitality();
+								damage = winged.holyAtk ( challenger.getLife(), damage );
+
+								challenger.setLife( damage );
+
+						break;
+						case 3:
+							std::cout << "I'll use my divine attack!!\n\n";
+
+								damage = winged.getSecDmg() + winged.getVitality();
+								damage = winged.divineAtk ( challenger.getLife(), damage );
+
+								challenger.setLife( damage );
+						break;
+						default:
+							std::cout << "You lost your turn\n\n";
+						break;
+					}
+
+					if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						std::cout << "You won\n\n";
+						
+						std::cout << winged.getName() << std::endl;
+						std::cout << winged.getLife() << "\n\n";
+						
+						std::cout << challenger.getName() << std::endl;
+						std::cout << challenger.getLife() << "\n\n";
+
+						system.Remove ( challenger, 0 );
+
+						break;
+					}
+
+					luck = rand () % 7 + 0;
+
+						if ( luck >= 3 ) {
+							action = 2;
+							switch ( action ) {
+								case 2:
+									std::cout << "Enemy: I'll punch you in the face!\n\n";
+										damage = challenger.getFirstDmg() + challenger.getSpirit();
+										damage = challenger.Atk ( winged.getLife(), damage );
+
+										winged.setLife( damage );
+
+								break;
+								case 3:
+									std::cout << "Hulk smash!!\n\n";
+								break;
+							}
+						} 
+						else {
+							std::cout << "Enemy: Miss\n";
+						} 
+
+					std::cout << winged.getName() << std::endl;
+					std::cout << winged.getLife() << "\n\n";
+					
+					std::cout << challenger.getName() << std::endl;
+					std::cout << challenger.getLife() << "\n\n";
+
+					if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						system.Remove ( winged, 1 );
+						break;
+					}
+
+				} while ( 1 );
+		}
+	}
+//--------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+//	beast Duel OK
+
+	void System::Duel ( beastMonster beast ) {
+
+		System system;
+		MonsterType challenger ( system.choosenOne () );
+		int action;
+		int damage = 0;
+		int luck;
+
+		if ( challenger.getType() == "Magic" ) {	//beast vs magic
+			std::cout << "Beast against magic\n\n";
+			std::cout << beast.getName() << std::endl;
 			std::cout << challenger.getName() << std::endl;
 
 			do {
 
-				std::cout << "( 1 ) Use Agility\n";
-				std::cout << "( 2 ) Use holy attack\n";
-				std::cout << "( 3 ) Use divine attack\n";
+				std::cout << "( 1 ) Use Rage\n";
+				std::cout << "( 2 ) Use Punch\n";
+				std::cout << "( 3 ) Use Smash\n";
 				std::cout << "Choose: ";
 				std::cin >> action;
 				std::cout << "\033[2J\033[1;1H";
@@ -739,33 +859,217 @@
 
 				switch ( action ) {
 					case 1:
-							std::cout << "Player: I'll use Agility!\n\n";
-							damage = winged.useAgility();
-							winged.setAgility( damage );
+							std::cout << "Player: I'll use Rage!\n\n";
+							beast.useRage();
+
 					break;
 					case 2:
-						std::cout << "Player: I'll use my holy attack!\n\n";
-							damage = winged.getFstDmg() + winged.getVitality();
-							damage = winged.holyAtk ( challenger.getLife(), damage );
+						std::cout << "Player: I'gonna punch you in the face!\n\n";
+							damage = beast.getFstDmg() + beast.getStrength();
+							damage = beast.frenesi ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
 
 					break;
 					case 3:
-						std::cout << "I'll use my divine attack!!\n\n";
-
-							damage = winged.getSecDmg() + winged.getVitality();
-							damage = winged.divineAtk ( challenger.getLife(), damage );
+						std::cout << "I'm gonna smash you!!\n\n";
+							damage = beast.getFstDmg() + beast.getStrength();
+							damage = beast.frenesi ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
 					break;
+					default:
+						std::cout << "You lost your turn\n\n";
+					break;
 				}
 
-				if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
+				if ( beast.getLife() <= 0 || challenger.getLife() <= 0 ) {
 					std::cout << "You won\n\n";
 					
-					std::cout << winged.getName() << std::endl;
-					std::cout << winged.getLife() << "\n\n";
+					std::cout << beast.getName() << std::endl;
+					std::cout << beast.getLife() << "\n\n";
+					
+					std::cout << challenger.getName() << std::endl;
+					std::cout << challenger.getLife() << "\n\n";
+
+					system.Remove ( challenger, 0 );
+
+					break;
+				}
+
+				luck = rand () % 7 + 0;
+
+					if ( luck >= 3 ) {
+						action = 2;
+						switch ( action ) {
+							case 2:
+								std::cout << "Enemy: I'll cast my spell!\n\n";
+									damage = challenger.getFirstDmg() + challenger.getSpirit();
+									damage = challenger.Atk ( beast.getLife(), damage );
+
+									beast.setLife( damage );
+
+							break;
+							case 3:
+								std::cout << "I'll use my secret scroll!!\n\n";
+							break;
+						}
+					} 
+					else {
+						std::cout << "Enemy: Miss\n";
+					} 
+
+				std::cout << beast.getName() << std::endl;
+				std::cout << beast.getLife() << "\n\n";
+				
+				std::cout << challenger.getName() << std::endl;
+				std::cout << challenger.getLife() << "\n\n";
+
+				if ( beast.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					system.Remove ( beast, 1 );
+					break;
+				}
+
+			} while ( 1 );
+		}
+
+		else if ( challenger.getType() == "Winged" ) {	//beast vs winged
+				std::cout << "Beast against winged\n\n";
+				std::cout << beast.getName() << std::endl;
+				std::cout << challenger.getName() << std::endl;
+
+				do {
+
+					std::cout << "( 1 ) Use Rage\n";
+					std::cout << "( 2 ) Use Punch\n";
+					std::cout << "( 3 ) Use Smash\n";
+					std::cout << "Choose: ";
+					std::cin >> action;
+					std::cout << "\033[2J\033[1;1H";
+					std::cin.get();
+
+					switch ( action ) {
+						case 1:
+							std::cout << "Player: I'll use Rage!\n\n";
+								beast.useRage();
+						break;
+						case 2:
+							std::cout << "Player: I'm gonna punch you in the face!\n\n";
+								damage = beast.getFstDmg() + beast.getStrength();
+								damage = beast.frenesi ( challenger.getLife(), damage );
+
+								challenger.setLife( damage );
+
+						break;
+						case 3:
+							std::cout << "I'm gonna smash you!!\n\n";
+								damage = beast.getFstDmg() + beast.getStrength();
+								damage = beast.frenesi ( challenger.getLife(), damage );
+
+								challenger.setLife( damage );
+						break;
+						default:
+						std::cout << "You lost your turn\n\n";
+						break;
+					}
+
+					if ( beast.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						std::cout << "You won\n\n";
+					
+						std::cout << beast.getName() << std::endl;
+						std::cout << beast.getLife() << "\n\n";
+						
+						std::cout << challenger.getName() << std::endl;
+						std::cout << challenger.getLife() << "\n\n";
+
+						system.Remove ( challenger, 0 );
+
+						break;
+					}
+
+					luck = rand () % 7 + 0;
+
+					if ( luck >= 3 ) {
+							action = 2;
+							switch ( action ) {
+								case 2:
+									std::cout << "Enemy: I'll use holy attack!\n\n";
+										damage = challenger.getFirstDmg() + challenger.getVitality();
+										damage = challenger.Atk ( beast.getLife(), damage );
+
+										beast.setLife( damage );
+
+								break;
+								case 3:
+									std::cout << "I'll Divine attack!!\n\n";
+								break;
+							}
+						} 
+						else {
+							std::cout << "Enemy: Miss\n";
+						} 
+
+					std::cout << beast.getName() << std::endl;
+					std::cout << beast.getLife() << "\n\n";
+					
+					std::cout << challenger.getName() << std::endl;
+					std::cout << challenger.getLife() << "\n\n";
+
+					if ( beast.getLife() <= 0 || challenger.getLife() <= 0 ) {
+						system.Remove ( beast, 1 );
+						break;
+					}
+
+				} while ( 1 );
+			}
+
+		else if ( challenger.getType() == "Beast" ) {	//beast vs beast
+			std::cout << "Beast against beast\n\n";
+			std::cout << beast.getName() << std::endl;
+			std::cout << challenger.getName() << std::endl;
+
+			do {
+
+				std::cout << "( 1 ) Use Rage\n";
+				std::cout << "( 2 ) Use Punch\n";
+				std::cout << "( 3 ) Use Smash\n";
+				std::cout << "Choose: ";
+				std::cin >> action;
+				std::cout << "\033[2J\033[1;1H";
+				std::cin.get();
+
+				switch ( action ) {
+					case 1:
+							std::cout << "Player: I'll use Rage!\n\n";
+							damage = beast.useRage();
+							beast.setRage( damage );
+					break;
+					case 2:
+						std::cout << "Player: I'm gonna punch you in the face!\n\n";
+							damage = beast.getFstDmg() + beast.getStrength();
+							damage = beast.frenesi ( challenger.getLife(), damage );
+
+							challenger.setLife( damage );
+
+					break;
+					case 3:
+						std::cout << "I'm gonna smash you!!\n\n";
+
+							damage = beast.getSecDmg() + beast.getStrength();
+							damage = beast.frenesi ( challenger.getLife(), damage );
+
+							challenger.setLife( damage );
+					break;
+					default:
+						std::cout << "You lost your turn\n\n";
+					break;
+				}
+
+				if ( beast.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					std::cout << "You won\n\n";
+					
+					std::cout << beast.getName() << std::endl;
+					std::cout << beast.getLife() << "\n\n";
 					
 					std::cout << challenger.getName() << std::endl;
 					std::cout << challenger.getLife() << "\n\n";
@@ -782,10 +1086,10 @@
 						switch ( action ) {
 							case 2:
 								std::cout << "Enemy: I'll punch you in the face!\n\n";
-									damage = challenger.getFirstDmg() + challenger.getSpirit();
-									damage = challenger.Atk ( winged.getLife(), damage );
+									damage = challenger.getFirstDmg() + challenger.getStrength();
+									damage = challenger.Atk ( beast.getLife(), damage );
 
-									winged.setLife( damage );
+									beast.setLife( damage );
 
 							break;
 							case 3:
@@ -797,14 +1101,14 @@
 						std::cout << "Enemy: Miss\n";
 					} 
 
-				std::cout << winged.getName() << std::endl;
-				std::cout << winged.getLife() << "\n\n";
+				std::cout << beast.getName() << std::endl;
+				std::cout << beast.getLife() << "\n\n";
 				
 				std::cout << challenger.getName() << std::endl;
 				std::cout << challenger.getLife() << "\n\n";
 
-				if ( winged.getLife() <= 0 || challenger.getLife() <= 0 ) {
-					system.Remove ( winged, 1 );
+				if ( beast.getLife() <= 0 || challenger.getLife() <= 0 ) {
+					system.Remove ( beast, 1 );
 					break;
 				}
 

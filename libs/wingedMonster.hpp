@@ -17,31 +17,48 @@ class wingedMonster: public Monster {
 
 private:
 
+	/**
+	*	@brief set the chance of enemy's attach hit
+	*/
 	int speed;
 
 public:
 
+	/**
+	*	@brief Set a new value to speed
+	*/
 	void setAgility ( int );
-	int getAgility ();
-	int useAgility (); // passive buff
 
-	//void holySpear (); // atk
-	//void handOfGod (); // atk
+	/**
+	*	@return value of speed variable
+	*/
+	int getAgility ();
+
+	/**
+	*	@brief increase the speed value
+	*	@return the new value of speed
+	*/
+	int useAgility (); // passive buff
 
 //--------------------------------------------------------------------
 //	holy atk
 
+	/**
+	*	@brief simple attack
+	*	@return the damage value
+	*/	
 	int holyAtk ( int, int );
 //--------------------------------------------------------------------	
 
 //--------------------------------------------------------------------
 //	divine atk
 
+	/**
+	*	@brief simple attack
+	*	@return the damage value
+	*/
 	int divineAtk ( int, int );
 //--------------------------------------------------------------------	
-
-	//wingedMonster();
-	//~wingedMonster();
 	
 };
 

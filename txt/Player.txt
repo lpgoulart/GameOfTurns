@@ -1,15 +1,21 @@
 Beast
-Hulk
-140
+Giant
+120
 0
-30
-40
+20
+25
 Winged
 God
 200
 0
 50
 60
+Beast
+Hulk
+140
+0
+30
+40
 Magic
 Dark Wizard
 100
@@ -18,18 +24,6 @@ Dark Wizard
 35
 Magic
 Wizard
-100
-0
-15
-35
-Winged
-Holy Priest
-150
-7
-5
-15
-Magic
-Ice Wizard
 100
 0
 15

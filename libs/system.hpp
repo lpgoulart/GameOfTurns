@@ -17,24 +17,55 @@ class System {
 
 public:
 
+	/**
+	*	@brief List all the monsters in the player deck
+	*/
 	void listMonster ();
+
+	/**
+	*	@brief Create a monster for the player
+	*	@param monster type
+	*	@param monster object
+	*/
 	void createMonster ( std::string, MonsterType );
+
+	/**
+	*	@brief Create a monster object for the player
+	*	@param monster type
+	*/
 	void choosenOne( std::string );
+
+	/**
+	*	@brief Create a monster for the enemy from his txt file
+	*	@return a monster object 
+	*/
 	MonsterType choosenOne ();
 	
 //--------------------------------------------------------------------
 // Duel
 
+	/**
+	*	@brief	Make the duel between a Magic type and another one
+	*/
 	void Duel ( magicMonster );
 
+	/**
+	*	@brief	Make the duel between a Winged type and another one
+	*/
 	void Duel ( wingedMonster );
 
-	//void Duel ( beastMonster );
+	/**
+	*	@brief	Make the duel between a Beast type and another one
+	*/
+	void Duel ( beastMonster );
 //--------------------------------------------------------------------
 	
 //--------------------------------------------------------------------
 //	Remove card
 	
+	/**
+	*	@brief	Transfer the loser monster to the enemy's deck
+	*/
 	template < typename T >
 	void Remove ( T object, int loser ) {
 
