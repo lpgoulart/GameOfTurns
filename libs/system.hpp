@@ -64,7 +64,7 @@ public:
 //	Remove card
 	
 	/**
-	*	@brief	Transfer the loser monster to the enemy's deck
+	*	@brief	Transfer the loser monster to the winner's deck
 	*/
 	template < typename T >
 	void Remove ( T object, int loser ) {

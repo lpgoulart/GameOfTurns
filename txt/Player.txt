@@ -1,9 +1,9 @@
-Beast
-Giant
-120
-0
-20
-25
+Winged
+Holy Priest
+150
+7
+5
+15
 Winged
 God
 200
