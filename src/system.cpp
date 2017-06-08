@@ -380,7 +380,7 @@
 						break;
 						case 2:
 							std::cout << "Player: I'll cast my spell!\n\n";
-								damage = magic.getKnowledge() + magic.getSpirit() + magic.getFstDmg();
+								damage = magic.getKnowledge() + magic.getSpirit() + magic.getFstDmg() + 5;
 								damage = magic.Spell ( challenger.getLife(), damage );
 
 								challenger.setLife( damage );
@@ -389,7 +389,7 @@
 						case 3:
 							std::cout << "I'll use my secret scroll!!\n\n";
 
-							damage = magic.getSecDmg() + magic.getSpirit() + magic.getKnowledge();
+							damage = magic.getSecDmg() + magic.getSpirit() + magic.getKnowledge() + 5;
 							damage = magic.Spell ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
@@ -420,7 +420,7 @@
 							switch ( action ) {
 								case 2:
 									std::cout << "Enemy: I'll use holy attack!\n\n";
-										damage = challenger.getFirstDmg() + challenger.getVitality();
+										damage = challenger.getFirstDmg() + challenger.getVitality() - 7;
 										damage = challenger.Atk ( magic.getLife(), damage );
 
 										magic.setLife( damage );
@@ -472,7 +472,7 @@
 					break;
 					case 2:
 						std::cout << "Player: I'll cast my spell!\n\n";
-							damage = magic.getFstDmg() + magic.getSpirit() + magic.getKnowledge();
+							damage = magic.getFstDmg() + magic.getSpirit() + magic.getKnowledge() - 7;
 							damage = magic.Spell ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
@@ -481,7 +481,7 @@
 					case 3:
 						std::cout << "I'll use my secret scroll!!\n\n";
 
-							damage = magic.getSecDmg() + magic.getSpirit() + magic.getKnowledge();
+							damage = magic.getSecDmg() + magic.getSpirit() + magic.getKnowledge() - 7;
 							damage = magic.Spell ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
@@ -512,7 +512,7 @@
 						switch ( action ) {
 							case 2:
 								std::cout << "Enemy: I'll punch you in the face!\n\n";
-									damage = challenger.getFirstDmg() + challenger.getSpirit();
+									damage = challenger.getFirstDmg() + challenger.getStrength() + 7;
 									damage = challenger.Atk ( magic.getLife(), damage );
 
 									magic.setLife( damage );
@@ -579,7 +579,7 @@
 					break;
 					case 2:
 						std::cout << "Player: I'll use holy attack!\n\n";
-							damage = winged.getFstDmg() + winged.getVitality();
+							damage = winged.getFstDmg() + winged.getVitality() - 7;
 							damage = winged.holyAtk ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
@@ -587,7 +587,7 @@
 					break;
 					case 3:
 						std::cout << "I'll use divine attack!!\n\n";
-							damage = winged.getFstDmg() + winged.getVitality();
+							damage = winged.getFstDmg() + winged.getVitality() - 7;
 							damage = winged.divineAtk ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
@@ -618,7 +618,7 @@
 						switch ( action ) {
 							case 2:
 								std::cout << "Enemy: I'll cast my spell!\n\n";
-									damage = challenger.getFirstDmg() + challenger.getSpirit();
+									damage = challenger.getFirstDmg() + challenger.getSpirit() + 7;
 									damage = challenger.Atk ( winged.getLife(), damage );
 
 									winged.setLife( damage );
@@ -760,7 +760,7 @@
 						break;
 						case 2:
 							std::cout << "Player: I'll use my holy attack!\n\n";
-								damage = winged.getFstDmg() + winged.getVitality();
+								damage = winged.getFstDmg() + winged.getVitality() + 7;
 								damage = winged.holyAtk ( challenger.getLife(), damage );
 
 								challenger.setLife( damage );
@@ -769,7 +769,7 @@
 						case 3:
 							std::cout << "I'll use my divine attack!!\n\n";
 
-								damage = winged.getSecDmg() + winged.getVitality();
+								damage = winged.getSecDmg() + winged.getVitality() + 7;
 								damage = winged.divineAtk ( challenger.getLife(), damage );
 
 								challenger.setLife( damage );
@@ -800,7 +800,7 @@
 							switch ( action ) {
 								case 2:
 									std::cout << "Enemy: I'll punch you in the face!\n\n";
-										damage = challenger.getFirstDmg() + challenger.getSpirit();
+										damage = challenger.getFirstDmg() + challenger.getStrength() - 7;
 										damage = challenger.Atk ( winged.getLife(), damage );
 
 										winged.setLife( damage );
@@ -865,7 +865,7 @@
 					break;
 					case 2:
 						std::cout << "Player: I'gonna punch you in the face!\n\n";
-							damage = beast.getFstDmg() + beast.getStrength();
+							damage = beast.getFstDmg() + beast.getStrength() + 7;
 							damage = beast.frenesi ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
@@ -873,7 +873,7 @@
 					break;
 					case 3:
 						std::cout << "I'm gonna smash you!!\n\n";
-							damage = beast.getFstDmg() + beast.getStrength();
+							damage = beast.getFstDmg() + beast.getStrength() + 7;
 							damage = beast.frenesi ( challenger.getLife(), damage );
 
 							challenger.setLife( damage );
@@ -904,7 +904,7 @@
 						switch ( action ) {
 							case 2:
 								std::cout << "Enemy: I'll cast my spell!\n\n";
-									damage = challenger.getFirstDmg() + challenger.getSpirit();
+									damage = challenger.getFirstDmg() + challenger.getSpirit() - 7;
 									damage = challenger.Atk ( beast.getLife(), damage );
 
 									beast.setLife( damage );
@@ -955,7 +955,7 @@
 						break;
 						case 2:
 							std::cout << "Player: I'm gonna punch you in the face!\n\n";
-								damage = beast.getFstDmg() + beast.getStrength();
+								damage = beast.getFstDmg() + beast.getStrength() - 7;
 								damage = beast.frenesi ( challenger.getLife(), damage );
 
 								challenger.setLife( damage );
@@ -963,7 +963,7 @@
 						break;
 						case 3:
 							std::cout << "I'm gonna smash you!!\n\n";
-								damage = beast.getFstDmg() + beast.getStrength();
+								damage = beast.getFstDmg() + beast.getStrength() - 7;
 								damage = beast.frenesi ( challenger.getLife(), damage );
 
 								challenger.setLife( damage );
@@ -994,7 +994,7 @@
 							switch ( action ) {
 								case 2:
 									std::cout << "Enemy: I'll use holy attack!\n\n";
-										damage = challenger.getFirstDmg() + challenger.getVitality();
+										damage = challenger.getFirstDmg() + challenger.getVitality() + 7;
 										damage = challenger.Atk ( beast.getLife(), damage );
 
 										beast.setLife( damage );

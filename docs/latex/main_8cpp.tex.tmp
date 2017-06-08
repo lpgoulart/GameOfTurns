@@ -1,0 +1,27 @@
+\hypertarget{main_8cpp}{}\section{/home/lpgoulart/\+U\+F\+R\+N/2017.1/\+L\+P\+\_\+1/\+Projects/\+Game\+Of\+Turns/app/main.cpp File Reference}
+\label{main_8cpp}\index{/home/lpgoulart/\+U\+F\+R\+N/2017.\+1/\+L\+P\+\_\+1/\+Projects/\+Game\+Of\+Turns/app/main.\+cpp@{/home/lpgoulart/\+U\+F\+R\+N/2017.\+1/\+L\+P\+\_\+1/\+Projects/\+Game\+Of\+Turns/app/main.\+cpp}}
+{\ttfamily \#include \char`\"{}../libs/headers.\+hpp\char`\"{}}\\*
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+\begin{DoxyAuthor}{Author}
+Leonardo Goulart 
+
+U\+F\+RN -\/ Federal University of Rio Grande do Norte 
+
+Project to Programmig Language 1 
+\end{DoxyAuthor}

@@ -1,0 +1,389 @@
+\hypertarget{classMonster}{}\section{Monster Class Reference}
+\label{classMonster}\index{Monster@{Monster}}
+
+
+{\ttfamily \#include $<$monster.\+hpp$>$}
+
+
+
+Inheritance diagram for Monster\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMonster_ad9de6832808440f0d4877d72d1c531e4}{set\+Name} (std\+::string)
+\begin{DoxyCompactList}\small\item\em set the monster name \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classMonster_a3f903085b1a1abb9f02c4e1b45aa08f1}{get\+Name} ()
+\begin{DoxyCompactList}\small\item\em get the monster name \end{DoxyCompactList}\item 
+void \hyperlink{classMonster_a690b68fafc373493d70bc89f231665f4}{set\+Life} (int)
+\begin{DoxyCompactList}\small\item\em set a life value \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_a45556268c87162cd9ab2f827fd0ed5df}{get\+Life} ()
+\begin{DoxyCompactList}\small\item\em get the life value \end{DoxyCompactList}\item 
+void \hyperlink{classMonster_ab939733894fbcf5d5e54c39917150ba6}{set\+Strength} (int)
+\begin{DoxyCompactList}\small\item\em set the strength value \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_a4a00f44c683fc00202a43460bd85cccb}{get\+Strength} ()
+\begin{DoxyCompactList}\small\item\em get the strength value  strength value \end{DoxyCompactList}\item 
+void \hyperlink{classMonster_a70ed94bbad22eec5ef9dc457933b1271}{set\+Spirit} (int)
+\begin{DoxyCompactList}\small\item\em set the spirit value \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_a43910f57b03ba87c62def418d994d8c8}{get\+Spirit} ()
+\begin{DoxyCompactList}\small\item\em get the spirit value \end{DoxyCompactList}\item 
+void \hyperlink{classMonster_a2844a2ffd8dee9fc331504170c1acede}{set\+Vitality} (int)
+\begin{DoxyCompactList}\small\item\em set the vitality value \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_a899fe1373b54dc3613f98ff570bb01bf}{get\+Vitality} ()
+\begin{DoxyCompactList}\small\item\em get the vitality value \end{DoxyCompactList}\item 
+void \hyperlink{classMonster_a8fc54b4bbd71e76d0f2d79d88bf855f9}{set\+Damage} (int)
+\begin{DoxyCompactList}\small\item\em set a value to damage \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_ae09da3617912fcab5fc661be5f2c77c5}{get\+Damage} ()
+\begin{DoxyCompactList}\small\item\em get the damage value \end{DoxyCompactList}\item 
+void \hyperlink{classMonster_a9413a198ea61970626bbe059917feaca}{set\+Fst\+Dmg} (int)
+\begin{DoxyCompactList}\small\item\em set the first attack value \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_aac4feaf0b40de54dbd5a93e168cc8163}{get\+Fst\+Dmg} ()
+\begin{DoxyCompactList}\small\item\em get the first attack value \end{DoxyCompactList}\item 
+void \hyperlink{classMonster_aab2ca4d9b1d0d4f5c9a0dee64b063c37}{set\+Sec\+Dmg} (int)
+\begin{DoxyCompactList}\small\item\em set the second attack value \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_a1d4ee87d8f6f564709859039928cb50a}{get\+Sec\+Dmg} ()
+\begin{DoxyCompactList}\small\item\em get the second attack value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classMonster_a3819d1bf6ee6bf2a9be94f8ddd2d4cb5}{damage}
+\begin{DoxyCompactList}\small\item\em damage value for every monster type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classMonster_ad32633c349f44cfc07b868ed4c27acde}{name}
+\begin{DoxyCompactList}\small\item\em monster name \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_aae3dcfdec7021d8982361fefe7ad50e5}{life}
+\begin{DoxyCompactList}\small\item\em monster life \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_afbc16b4a4bf61323209aea1b5a49e696}{strength} = 5
+\begin{DoxyCompactList}\small\item\em base damage for beast type \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_aa1b8da71fd1003628cee59bb8f52f270}{spirit} = 5
+\begin{DoxyCompactList}\small\item\em base damage for magic type \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_a30645db1b638fc2c158720519c0bf645}{vitality} = 5
+\begin{DoxyCompactList}\small\item\em base damage for winged type \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_aa75316144cd0ca5a4a1d7b76c4931e75}{Fst\+Dmg}
+\begin{DoxyCompactList}\small\item\em value of first attack \end{DoxyCompactList}\item 
+int \hyperlink{classMonster_abafa6a490f5fd29b3925367c5989b1db}{Sec\+Dmg}
+\begin{DoxyCompactList}\small\item\em value of the second attack \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Leonardo Goulart 
+
+U\+F\+RN -\/ Federal University of Rio Grande do Norte 
+
+Project to Programmig Language 1 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\index{Monster@{Monster}!get\+Damage@{get\+Damage}}
+\index{get\+Damage@{get\+Damage}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{get\+Damage()}{getDamage()}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::get\+Damage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_ae09da3617912fcab5fc661be5f2c77c5}{}\label{classMonster_ae09da3617912fcab5fc661be5f2c77c5}
+
+
+get the damage value 
+
+\begin{DoxyReturn}{Returns}
+damage value 
+\end{DoxyReturn}
+\index{Monster@{Monster}!get\+Fst\+Dmg@{get\+Fst\+Dmg}}
+\index{get\+Fst\+Dmg@{get\+Fst\+Dmg}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{get\+Fst\+Dmg()}{getFstDmg()}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::get\+Fst\+Dmg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_aac4feaf0b40de54dbd5a93e168cc8163}{}\label{classMonster_aac4feaf0b40de54dbd5a93e168cc8163}
+
+
+get the first attack value 
+
+\begin{DoxyReturn}{Returns}
+first attack value 
+\end{DoxyReturn}
+\index{Monster@{Monster}!get\+Life@{get\+Life}}
+\index{get\+Life@{get\+Life}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{get\+Life()}{getLife()}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::get\+Life (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a45556268c87162cd9ab2f827fd0ed5df}{}\label{classMonster_a45556268c87162cd9ab2f827fd0ed5df}
+
+
+get the life value 
+
+\begin{DoxyReturn}{Returns}
+life value 
+\end{DoxyReturn}
+\index{Monster@{Monster}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{get\+Name()}{getName()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Monster\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a3f903085b1a1abb9f02c4e1b45aa08f1}{}\label{classMonster_a3f903085b1a1abb9f02c4e1b45aa08f1}
+
+
+get the monster name 
+
+\begin{DoxyReturn}{Returns}
+monster name 
+\end{DoxyReturn}
+\index{Monster@{Monster}!get\+Sec\+Dmg@{get\+Sec\+Dmg}}
+\index{get\+Sec\+Dmg@{get\+Sec\+Dmg}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{get\+Sec\+Dmg()}{getSecDmg()}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::get\+Sec\+Dmg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a1d4ee87d8f6f564709859039928cb50a}{}\label{classMonster_a1d4ee87d8f6f564709859039928cb50a}
+
+
+get the second attack value 
+
+\begin{DoxyReturn}{Returns}
+second attack value 
+\end{DoxyReturn}
+\index{Monster@{Monster}!get\+Spirit@{get\+Spirit}}
+\index{get\+Spirit@{get\+Spirit}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{get\+Spirit()}{getSpirit()}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::get\+Spirit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a43910f57b03ba87c62def418d994d8c8}{}\label{classMonster_a43910f57b03ba87c62def418d994d8c8}
+
+
+get the spirit value 
+
+\begin{DoxyReturn}{Returns}
+spirit value 
+\end{DoxyReturn}
+\index{Monster@{Monster}!get\+Strength@{get\+Strength}}
+\index{get\+Strength@{get\+Strength}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{get\+Strength()}{getStrength()}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::get\+Strength (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a4a00f44c683fc00202a43460bd85cccb}{}\label{classMonster_a4a00f44c683fc00202a43460bd85cccb}
+
+
+get the strength value  strength value 
+
+\index{Monster@{Monster}!get\+Vitality@{get\+Vitality}}
+\index{get\+Vitality@{get\+Vitality}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{get\+Vitality()}{getVitality()}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::get\+Vitality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a899fe1373b54dc3613f98ff570bb01bf}{}\label{classMonster_a899fe1373b54dc3613f98ff570bb01bf}
+
+
+get the vitality value 
+
+\begin{DoxyReturn}{Returns}
+vitality value 
+\end{DoxyReturn}
+\index{Monster@{Monster}!set\+Damage@{set\+Damage}}
+\index{set\+Damage@{set\+Damage}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{set\+Damage(int)}{setDamage(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Monster\+::set\+Damage (
+\begin{DoxyParamCaption}
+\item[{int}]{dmg}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a8fc54b4bbd71e76d0f2d79d88bf855f9}{}\label{classMonster_a8fc54b4bbd71e76d0f2d79d88bf855f9}
+
+
+set a value to damage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\index{Monster@{Monster}!set\+Fst\+Dmg@{set\+Fst\+Dmg}}
+\index{set\+Fst\+Dmg@{set\+Fst\+Dmg}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{set\+Fst\+Dmg(int)}{setFstDmg(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Monster\+::set\+Fst\+Dmg (
+\begin{DoxyParamCaption}
+\item[{int}]{dmg}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a9413a198ea61970626bbe059917feaca}{}\label{classMonster_a9413a198ea61970626bbe059917feaca}
+
+
+set the first attack value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\index{Monster@{Monster}!set\+Life@{set\+Life}}
+\index{set\+Life@{set\+Life}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{set\+Life(int)}{setLife(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Monster\+::set\+Life (
+\begin{DoxyParamCaption}
+\item[{int}]{hp}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a690b68fafc373493d70bc89f231665f4}{}\label{classMonster_a690b68fafc373493d70bc89f231665f4}
+
+
+set a life value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\index{Monster@{Monster}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{set\+Name(std\+::string)}{setName(std::string)}}]{\setlength{\rightskip}{0pt plus 5cm}void Monster\+::set\+Name (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{Name}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_ad9de6832808440f0d4877d72d1c531e4}{}\label{classMonster_ad9de6832808440f0d4877d72d1c531e4}
+
+
+set the monster name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mosnter} & name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Leonardo Goulart 
+
+U\+F\+RN -\/ Federal University of Rio Grande do Norte 
+
+Project to Programmig Language 1 
+\end{DoxyAuthor}
+\index{Monster@{Monster}!set\+Sec\+Dmg@{set\+Sec\+Dmg}}
+\index{set\+Sec\+Dmg@{set\+Sec\+Dmg}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{set\+Sec\+Dmg(int)}{setSecDmg(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Monster\+::set\+Sec\+Dmg (
+\begin{DoxyParamCaption}
+\item[{int}]{dmg}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_aab2ca4d9b1d0d4f5c9a0dee64b063c37}{}\label{classMonster_aab2ca4d9b1d0d4f5c9a0dee64b063c37}
+
+
+set the second attack value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\index{Monster@{Monster}!set\+Spirit@{set\+Spirit}}
+\index{set\+Spirit@{set\+Spirit}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{set\+Spirit(int)}{setSpirit(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Monster\+::set\+Spirit (
+\begin{DoxyParamCaption}
+\item[{int}]{inteligence}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a70ed94bbad22eec5ef9dc457933b1271}{}\label{classMonster_a70ed94bbad22eec5ef9dc457933b1271}
+
+
+set the spirit value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\index{Monster@{Monster}!set\+Strength@{set\+Strength}}
+\index{set\+Strength@{set\+Strength}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{set\+Strength(int)}{setStrength(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Monster\+::set\+Strength (
+\begin{DoxyParamCaption}
+\item[{int}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_ab939733894fbcf5d5e54c39917150ba6}{}\label{classMonster_ab939733894fbcf5d5e54c39917150ba6}
+
+
+set the strength value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\index{Monster@{Monster}!set\+Vitality@{set\+Vitality}}
+\index{set\+Vitality@{set\+Vitality}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{set\+Vitality(int)}{setVitality(int)}}]{\setlength{\rightskip}{0pt plus 5cm}void Monster\+::set\+Vitality (
+\begin{DoxyParamCaption}
+\item[{int}]{vit}
+\end{DoxyParamCaption}
+)}\hypertarget{classMonster_a2844a2ffd8dee9fc331504170c1acede}{}\label{classMonster_a2844a2ffd8dee9fc331504170c1acede}
+
+
+set the vitality value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{Monster@{Monster}!damage@{damage}}
+\index{damage@{damage}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{damage}{damage}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::damage}\hypertarget{classMonster_a3819d1bf6ee6bf2a9be94f8ddd2d4cb5}{}\label{classMonster_a3819d1bf6ee6bf2a9be94f8ddd2d4cb5}
+
+
+damage value for every monster type 
+
+\index{Monster@{Monster}!Fst\+Dmg@{Fst\+Dmg}}
+\index{Fst\+Dmg@{Fst\+Dmg}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{Fst\+Dmg}{FstDmg}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::\+Fst\+Dmg\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMonster_aa75316144cd0ca5a4a1d7b76c4931e75}{}\label{classMonster_aa75316144cd0ca5a4a1d7b76c4931e75}
+
+
+value of first attack 
+
+\index{Monster@{Monster}!life@{life}}
+\index{life@{life}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{life}{life}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::life\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMonster_aae3dcfdec7021d8982361fefe7ad50e5}{}\label{classMonster_aae3dcfdec7021d8982361fefe7ad50e5}
+
+
+monster life 
+
+\index{Monster@{Monster}!name@{name}}
+\index{name@{name}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Monster\+::name\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMonster_ad32633c349f44cfc07b868ed4c27acde}{}\label{classMonster_ad32633c349f44cfc07b868ed4c27acde}
+
+
+monster name 
+
+\index{Monster@{Monster}!Sec\+Dmg@{Sec\+Dmg}}
+\index{Sec\+Dmg@{Sec\+Dmg}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{Sec\+Dmg}{SecDmg}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::\+Sec\+Dmg\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMonster_abafa6a490f5fd29b3925367c5989b1db}{}\label{classMonster_abafa6a490f5fd29b3925367c5989b1db}
+
+
+value of the second attack 
+
+\index{Monster@{Monster}!spirit@{spirit}}
+\index{spirit@{spirit}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{spirit}{spirit}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::spirit = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMonster_aa1b8da71fd1003628cee59bb8f52f270}{}\label{classMonster_aa1b8da71fd1003628cee59bb8f52f270}
+
+
+base damage for magic type 
+
+\index{Monster@{Monster}!strength@{strength}}
+\index{strength@{strength}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{strength}{strength}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::strength = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMonster_afbc16b4a4bf61323209aea1b5a49e696}{}\label{classMonster_afbc16b4a4bf61323209aea1b5a49e696}
+
+
+base damage for beast type 
+
+\index{Monster@{Monster}!vitality@{vitality}}
+\index{vitality@{vitality}!Monster@{Monster}}
+\subsubsection[{\texorpdfstring{vitality}{vitality}}]{\setlength{\rightskip}{0pt plus 5cm}int Monster\+::vitality = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classMonster_a30645db1b638fc2c158720519c0bf645}{}\label{classMonster_a30645db1b638fc2c158720519c0bf645}
+
+
+base damage for winged type 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lpgoulart/\+U\+F\+R\+N/2017.\+1/\+L\+P\+\_\+1/\+Projects/\+Game\+Of\+Turns/include/\hyperlink{monster_8hpp}{monster.\+hpp}\item 
+/home/lpgoulart/\+U\+F\+R\+N/2017.\+1/\+L\+P\+\_\+1/\+Projects/\+Game\+Of\+Turns/src/\hyperlink{monster_8cpp}{monster.\+cpp}\end{DoxyCompactItemize}

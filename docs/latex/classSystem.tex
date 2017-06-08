@@ -1,0 +1,168 @@
+\hypertarget{classSystem}{}\section{System Class Reference}
+\label{classSystem}\index{System@{System}}
+
+
+{\ttfamily \#include $<$system.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSystem_a253f3796b5fc8c6f46071127314bdea3}{list\+Monster} ()
+\begin{DoxyCompactList}\small\item\em List all the monsters in the player deck. \end{DoxyCompactList}\item 
+void \hyperlink{classSystem_a8b3108670ea7c2aa6fc3f6363db1bee0}{create\+Monster} (std\+::string, \hyperlink{classMonsterType}{Monster\+Type})
+\begin{DoxyCompactList}\small\item\em Create a monster for the player. \end{DoxyCompactList}\item 
+void \hyperlink{classSystem_a0c26123b747ca23a6cd37f46dc107781}{choosen\+One} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Create a monster object for the player. \end{DoxyCompactList}\item 
+\hyperlink{classMonsterType}{Monster\+Type} \hyperlink{classSystem_a85b01762246c0a9392398331a5b39d9e}{choosen\+One} ()
+\begin{DoxyCompactList}\small\item\em Create a monster for the enemy from his txt file. \end{DoxyCompactList}\item 
+void \hyperlink{classSystem_aa90bea1c6f38f6536ad2741d01d21e10}{Duel} (\hyperlink{classmagicMonster}{magic\+Monster})
+\begin{DoxyCompactList}\small\item\em Make the duel between a Magic type and another one. \end{DoxyCompactList}\item 
+void \hyperlink{classSystem_a8f5809666976638b9ed48ca83558e90a}{Duel} (\hyperlink{classwingedMonster}{winged\+Monster})
+\begin{DoxyCompactList}\small\item\em Make the duel between a Winged type and another one. \end{DoxyCompactList}\item 
+void \hyperlink{classSystem_ae2417878449735d0c500c7b6b4484087}{Duel} (\hyperlink{classbeastMonster}{beast\+Monster})
+\begin{DoxyCompactList}\small\item\em Make the duel between a Beast type and another one. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{classSystem_a37a6f3265ea9859025661504db04faef}{Remove} (T object, int loser)
+\begin{DoxyCompactList}\small\item\em Transfer the loser monster to the winner\textquotesingle{}s deck. \end{DoxyCompactList}\item 
+\hyperlink{classSystem_ae317936c9bcf1374d61745572e0f2f8a}{System} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Leonardo Goulart 
+
+U\+F\+RN -\/ Federal University of Rio Grande do Norte 
+
+Project to Programmig Language 1 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{System@{System}!System@{System}}
+\index{System@{System}!System@{System}}
+\subsubsection[{\texorpdfstring{System()}{System()}}]{\setlength{\rightskip}{0pt plus 5cm}System\+::\+System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSystem_ae317936c9bcf1374d61745572e0f2f8a}{}\label{classSystem_ae317936c9bcf1374d61745572e0f2f8a}
+\begin{DoxyAuthor}{Author}
+Leonardo Goulart 
+
+U\+F\+RN -\/ Federal University of Rio Grande do Norte 
+
+Project to Programmig Language 1 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\index{System@{System}!choosen\+One@{choosen\+One}}
+\index{choosen\+One@{choosen\+One}!System@{System}}
+\subsubsection[{\texorpdfstring{choosen\+One(std\+::string)}{choosenOne(std::string)}}]{\setlength{\rightskip}{0pt plus 5cm}void System\+::choosen\+One (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{the\+One}
+\end{DoxyParamCaption}
+)}\hypertarget{classSystem_a0c26123b747ca23a6cd37f46dc107781}{}\label{classSystem_a0c26123b747ca23a6cd37f46dc107781}
+
+
+Create a monster object for the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monster} & type \\
+\hline
+\end{DoxyParams}
+\index{System@{System}!choosen\+One@{choosen\+One}}
+\index{choosen\+One@{choosen\+One}!System@{System}}
+\subsubsection[{\texorpdfstring{choosen\+One()}{choosenOne()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Monster\+Type} System\+::choosen\+One (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSystem_a85b01762246c0a9392398331a5b39d9e}{}\label{classSystem_a85b01762246c0a9392398331a5b39d9e}
+
+
+Create a monster for the enemy from his txt file. 
+
+\begin{DoxyReturn}{Returns}
+a monster object 
+\end{DoxyReturn}
+\index{System@{System}!create\+Monster@{create\+Monster}}
+\index{create\+Monster@{create\+Monster}!System@{System}}
+\subsubsection[{\texorpdfstring{create\+Monster(std\+::string, Monster\+Type)}{createMonster(std::string, MonsterType)}}]{\setlength{\rightskip}{0pt plus 5cm}void System\+::create\+Monster (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{type, }
+\item[{{\bf Monster\+Type}}]{features}
+\end{DoxyParamCaption}
+)}\hypertarget{classSystem_a8b3108670ea7c2aa6fc3f6363db1bee0}{}\label{classSystem_a8b3108670ea7c2aa6fc3f6363db1bee0}
+
+
+Create a monster for the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monster} & type \\
+\hline
+{\em monster} & object \\
+\hline
+\end{DoxyParams}
+\index{System@{System}!Duel@{Duel}}
+\index{Duel@{Duel}!System@{System}}
+\subsubsection[{\texorpdfstring{Duel(magic\+Monster)}{Duel(magicMonster)}}]{\setlength{\rightskip}{0pt plus 5cm}void System\+::\+Duel (
+\begin{DoxyParamCaption}
+\item[{{\bf magic\+Monster}}]{magic}
+\end{DoxyParamCaption}
+)}\hypertarget{classSystem_aa90bea1c6f38f6536ad2741d01d21e10}{}\label{classSystem_aa90bea1c6f38f6536ad2741d01d21e10}
+
+
+Make the duel between a Magic type and another one. 
+
+\index{System@{System}!Duel@{Duel}}
+\index{Duel@{Duel}!System@{System}}
+\subsubsection[{\texorpdfstring{Duel(winged\+Monster)}{Duel(wingedMonster)}}]{\setlength{\rightskip}{0pt plus 5cm}void System\+::\+Duel (
+\begin{DoxyParamCaption}
+\item[{{\bf winged\+Monster}}]{winged}
+\end{DoxyParamCaption}
+)}\hypertarget{classSystem_a8f5809666976638b9ed48ca83558e90a}{}\label{classSystem_a8f5809666976638b9ed48ca83558e90a}
+
+
+Make the duel between a Winged type and another one. 
+
+\index{System@{System}!Duel@{Duel}}
+\index{Duel@{Duel}!System@{System}}
+\subsubsection[{\texorpdfstring{Duel(beast\+Monster)}{Duel(beastMonster)}}]{\setlength{\rightskip}{0pt plus 5cm}void System\+::\+Duel (
+\begin{DoxyParamCaption}
+\item[{{\bf beast\+Monster}}]{beast}
+\end{DoxyParamCaption}
+)}\hypertarget{classSystem_ae2417878449735d0c500c7b6b4484087}{}\label{classSystem_ae2417878449735d0c500c7b6b4484087}
+
+
+Make the duel between a Beast type and another one. 
+
+\index{System@{System}!list\+Monster@{list\+Monster}}
+\index{list\+Monster@{list\+Monster}!System@{System}}
+\subsubsection[{\texorpdfstring{list\+Monster()}{listMonster()}}]{\setlength{\rightskip}{0pt plus 5cm}void System\+::list\+Monster (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classSystem_a253f3796b5fc8c6f46071127314bdea3}{}\label{classSystem_a253f3796b5fc8c6f46071127314bdea3}
+
+
+List all the monsters in the player deck. 
+
+\index{System@{System}!Remove@{Remove}}
+\index{Remove@{Remove}!System@{System}}
+\subsubsection[{\texorpdfstring{Remove(\+T object, int loser)}{Remove(T object, int loser)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void System\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{T}]{object, }
+\item[{int}]{loser}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classSystem_a37a6f3265ea9859025661504db04faef}{}\label{classSystem_a37a6f3265ea9859025661504db04faef}
+
+
+Transfer the loser monster to the winner\textquotesingle{}s deck. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lpgoulart/\+U\+F\+R\+N/2017.\+1/\+L\+P\+\_\+1/\+Projects/\+Game\+Of\+Turns/include/\hyperlink{system_8hpp}{system.\+hpp}\item 
+/home/lpgoulart/\+U\+F\+R\+N/2017.\+1/\+L\+P\+\_\+1/\+Projects/\+Game\+Of\+Turns/src/\hyperlink{system_8cpp}{system.\+cpp}\end{DoxyCompactItemize}
