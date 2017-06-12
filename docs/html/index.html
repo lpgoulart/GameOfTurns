@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><ul>
-<li></li>
+<li>The source code simulate a game between a player and an AI (artificial inteligence). It was programmed in C++. Developed for my Programing Language I grade at my IT Bachelor degree - UFRN.</li>
 </ul>
 <h2>Information</h2>
 <ul>
@@ -91,8 +91,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Report issues <a href="https://github.com/lpgoulart/GameOfTurns/issues">issue tracker</a>.</li>
 </ul>
 <h2>Installation</h2>
-<p>/.. TO DO ../</p>
-<h2>Report</h2>
+<ul>
+<li>Download the full repository from my github <a href="https://github.com/lpgoulart/GameOfTurns">click here</a>, or follow the steps below:</li>
+</ul>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;$ git clone https://github.com/lpgoulart/GameOfTurns.git</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;$ cd GameOfTurns</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;$ make</div></div><!-- fragment --><ul>
+<li>To run, just go bin directory by typing:</li>
+</ul>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;$ cd bin</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;./GoT</div></div><!-- fragment --><h2>Report</h2>
+<ul>
+<li><p class="startli">Read the grimoire of the player and choose a card to play</p>
+<p class="startli"><a class="el" href="system_8cpp.html">src/system.cpp</a>: Function void choosenOne ()</p>
+<p class="startli"><a class="el" href="system_8cpp.html">src/system.cpp</a>: Line: 58</p>
+</li>
+<li><p class="startli">Read the grimoire of the AI and choose a card to play</p>
+<p class="startli"><a class="el" href="system_8cpp.html">src/system.cpp</a>: Function <a class="el" href="classMonsterType.html">MonsterType</a> choosenOne ()</p>
+<p class="startli"><a class="el" href="system_8cpp.html">src/system.cpp</a>: Line: 209</p>
+</li>
+<li><p class="startli">Duel</p>
+<p class="startli">Magic Duel: <a class="el" href="system_8cpp.html">src/system.cpp</a>: Function void Duel ( <a class="el" href="classmagicMonster.html">magicMonster</a> magic)</p>
+<p class="startli"><a class="el" href="system_8cpp.html">src/system.cpp</a>: Line 260</p>
+<p class="startli">Winged Duel: <a class="el" href="system_8cpp.html">src/system.cpp</a>: Function void Duel ( <a class="el" href="classwingedMonster.html">wingedMonster</a> winged )</p>
+<p class="startli"><a class="el" href="system_8cpp.html">src/system.cpp</a>: Line: 550</p>
+<p class="startli">Beast Duel: <a class="el" href="system_8cpp.html">src/system.cpp</a>: Function void Duel ( <a class="el" href="classbeastMonster.html">beastMonster</a> beast )</p>
+<p class="startli"><a class="el" href="system_8cpp.html">src/system.cpp</a>: Line: 837</p>
+</li>
+<li><p class="startli">Remove the loser card and put in the winner's file</p>
+<p class="startli"><a class="el" href="system_8hpp.html">libs/system.hpp</a>: Funtion Remove ( T object, int loser )</p>
+<p class="startli"><a class="el" href="system_8hpp.html">libs/system.hpp</a>: Line 69 </p>
+</li>
+</ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

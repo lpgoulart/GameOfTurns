@@ -1,6 +1,6 @@
 
 \begin{DoxyItemize}
-\item 
+\item The source code simulate a game between a player and an AI (artificial inteligence). It was programmed in C++. Developed for my Programing Language I grade at my IT Bachelor degree -\/ U\+F\+RN.
 \end{DoxyItemize}
 
 \subsection*{Information}
@@ -19,6 +19,61 @@
 
 \subsection*{Installation}
 
-/.. TO DO ../
+
+\begin{DoxyItemize}
+\item Download the full repository from my github \href{https://github.com/lpgoulart/GameOfTurns}{\tt click here}, or follow the steps below\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+1 $ git clone https://github.com/lpgoulart/GameOfTurns.git
+2 $ cd GameOfTurns
+3 $ make
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item To run, just go bin directory by typing\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+1 $ cd bin
+2 ./GoT
+\end{DoxyCode}
+
 
 \subsection*{Report}
+
+
+\begin{DoxyItemize}
+\item Read the grimoire of the player and choose a card to play
+
+\hyperlink{system_8cpp}{src/system.\+cpp}\+: Function void choosen\+One ()
+
+\hyperlink{system_8cpp}{src/system.\+cpp}\+: Line\+: 58
+\item Read the grimoire of the AI and choose a card to play
+
+\hyperlink{system_8cpp}{src/system.\+cpp}\+: Function \hyperlink{classMonsterType}{Monster\+Type} choosen\+One ()
+
+\hyperlink{system_8cpp}{src/system.\+cpp}\+: Line\+: 209
+\item Duel
+
+Magic Duel\+: \hyperlink{system_8cpp}{src/system.\+cpp}\+: Function void Duel ( \hyperlink{classmagicMonster}{magic\+Monster} magic)
+
+\hyperlink{system_8cpp}{src/system.\+cpp}\+: Line 260
+
+Winged Duel\+: \hyperlink{system_8cpp}{src/system.\+cpp}\+: Function void Duel ( \hyperlink{classwingedMonster}{winged\+Monster} winged )
+
+\hyperlink{system_8cpp}{src/system.\+cpp}\+: Line\+: 550
+
+Beast Duel\+: \hyperlink{system_8cpp}{src/system.\+cpp}\+: Function void Duel ( \hyperlink{classbeastMonster}{beast\+Monster} beast )
+
+\hyperlink{system_8cpp}{src/system.\+cpp}\+: Line\+: 837
+\item Remove the loser card and put in the winner\textquotesingle{}s file
+
+\hyperlink{system_8hpp}{libs/system.\+hpp}\+: Funtion Remove ( T object, int loser )
+
+\hyperlink{system_8hpp}{libs/system.\+hpp}\+: Line 69 
+\end{DoxyItemize}
